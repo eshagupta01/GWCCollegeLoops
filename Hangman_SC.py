@@ -2,7 +2,7 @@
 def guessing(listofguess, list_char):
     print("finish later")
 def search(searching, list_char, listofguess):
-    pprint("finish later")
+    print("finish later")
 def strip_input(prompt):
      string = input(prompt)
      string = string.strip()
