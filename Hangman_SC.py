@@ -13,11 +13,10 @@ def print_list(log):
         print(x, end = '\t')
     print()
 
-    
-if __name__ == "__main__":
-    print("finish later")
-    #set up the game
+#Main function    
+print("finish later")
+#set up the game
 
-    #play the game
+#play the game
 
-    #check ending condition
+#check ending condition
