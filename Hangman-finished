@@ -1,0 +1,39 @@
+#Hangman
+def guessing(listofguess, list_char):
+    print_list(listofguess)
+    guess = strip_input("Enter a character to guess: ")
+    return search(guess, list_char, listofguess)
+def search(searching, list_char, listofguess):
+    return_val = False
+    for x in range(len(list_char)):
+        if list_char[x] == searching:
+            listofguess[x] = searching
+            return_val = True
+    return return_val
+def strip_input(prompt):
+     string = input(prompt)
+     string = string.strip()
+     string = string.lower()
+     return string
+def print_list(log):
+    for x in log:
+        print(x, end = '\t')
+    print()
+if __name__ == "__main__":
+    error = 0
+    string = strip_input("Enter a word to guess:")
+    list_char = list(string)
+    listofguess = ["_"]*len(list_char)
+    
+    while error < 6:
+        add_error = guessing(listofguess, list_char)
+        if not(add_error):
+            error +=1
+        if not('_' in listofguess):
+            break
+        print ("Error: " + str(error))
+    if error == 6:
+        print("You lost, the word was : " + string)
+    else:
+        print_list(listofguess)
+        print("You won!")
